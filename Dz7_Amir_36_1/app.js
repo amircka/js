@@ -1,18 +1,25 @@
-function checkNumber() {
-    var userNumber = parseInt(document.getElementById('userInput').value);
-    if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
-        alert('Please enter a valid number between 1 and 100.');
+const resultDisplay = document.getElementById('result');
+
+function checkGuess() {
+    const userGuessInput = document.getElementById('userGuess');
+    const userGuess = parseInt(userGuessInput.value);
+
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+        resultDisplay.textContent = "Введите число от 1 до 100";
+        resultDisplay.style.color = "black";
         return;
     }
 
-    var generatedNumber = Math.floor(Math.random() * 100) + 1;
-    var hintElement = document.getElementById('hint');
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
 
-    if (userNumber < generatedNumber) {
-        hintElement.innerText = "The generated number is greater.";
-    } else if (userNumber > generatedNumber) {
-        hintElement.innerText = "The generated number is smaller.";
+    if (userGuess < randomNumber) {
+        resultDisplay.textContent = "Загаданное число больше";
+        resultDisplay.style.color = "green";
+    } else if (userGuess > randomNumber) {
+        resultDisplay.textContent = "Загаданное число меньше";
+        resultDisplay.style.color = "red";
     } else {
-        hintElement.innerText = "Congratulations! You guessed the number!";
+        resultDisplay.textContent = "Вы угадали!";
+        resultDisplay.style.color = "black";
     }
 }
