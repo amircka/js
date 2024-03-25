@@ -1,18 +1,7 @@
 body {
     font-family: Arial, sans-serif;
 }
-input[type="number"] {
-    padding: 8px;
-    width: 100px;
-    margin-right: 10px;
-}
-button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-#hint {
+#result {
+    font-size: 20px;
     margin-top: 10px;
 }
